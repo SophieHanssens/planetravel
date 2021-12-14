@@ -4,15 +4,16 @@
 <p>Your full name:<%= @user.name %></p>
 <p>Your email:<%= @user.email %></p>
 <p>Your phone number:<%= @user.phone_number %></p>
+<p><%= link_to 'Edit profil', edit_user_registration_path %></p>
 </div>
 
 <div>
   <h4>Your trips</h4>
   <ul>
     <% @bookings.each do |booking| %>
-      <% @planet = booking.planet %>
+      <% planet = booking.planet %>
       <% if booking.status != 'Declined' %>
-        <li><%= @planet.name %> (<%= booking.status %>) -
+        <li><%= planet.name %> (<%= booking.status %>) -
             from <%= booking.arrival_date %>
             to <%= booking.departure_date %> -
             <%= booking.total_price %></li>
@@ -23,6 +24,7 @@
 
 <div>
   <h4>Your bookings</h4>
+
 </div>
 
 <% console %>
