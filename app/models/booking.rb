@@ -5,5 +5,5 @@ class Booking < ApplicationRecord
   @status = ['Accepted', 'Declined', 'pending']
 
   validates :status, inclusion: { in: @status }
-  validates :total_price, numericality: true
+#  validates :total_price, numericality: true
 end
