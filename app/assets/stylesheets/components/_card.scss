@@ -1,0 +1,76 @@
+.planet-card {
+  .cercle {
+    width: 160px;
+    height: 160px;
+    border-radius: 80px;
+    background: #D8F3DC;
+    border: solid #B7E4C7;
+    text-align: center;
+    opacity: 0.3;
+  }
+  .card-infos {
+    justify-content: center;
+    width: 180px;
+    height: 200px;
+    background-color: #B7E4C7;
+    border: solid #74C69D;
+    border-width: 2px;
+    text-align: center;
+    font-family: 'Ubuntu Mono', monospace;
+    // font-style: italic;
+    opacity: 0.3;
+  }
+}
+
+.news-card {
+  .square-image {
+    border-radius: 20px;
+    border: solid #52B788;
+    text-align: center;
+  }
+  .square-infos {
+    border-radius: 20px;
+    border: solid #52B788;
+    border-width: 2px;
+    background-color: #B7E4C7;
+    text-align: center;
+    padding: 30px;
+    font-family: 'Ubuntu Mono', monospace;
+    font-style: italic;
+    opacity: 0.3;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Float four columns side by side */
+.column {
+  justify-content: center;
+  float: left;
+  width: 15%;
+  padding: 0 10px;
+  margin-bottom: 40px;
+}
+
+/* Remove extra left and right margins, due to padding in columns */
+.row {
+  justify-content: center;
+  margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns - one column layout (vertical) on small screens */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
