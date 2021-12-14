@@ -15,17 +15,17 @@ Planet.destroy_all
 
 def retrieve_planets(users)
   i = 1
-  until i == 20 do
+  until i == 5 do
 
-    url = "https://swapi.dev/api/planets/#{i}"
-    api_results = URI.open(url).read
-    planets_api = JSON.parse(api_results)
-    # planets = planets_api["results"]
-    # planets.each do |m|
+    # url = "https://swapi.dev/api/planets/#{i}"
+    # api_results = URI.open(url).read
+    # planets_api = JSON.parse(api_results)
 
-    name = planets_api['name']
+    # name = planets_api['name']
+    name = rand(400000..20000000)
     available_places = rand(1..20)
-    address = planets_api['terrain']
+    # address = planets_api['terrain']
+    address = rand(400000..20000000)
     price_per_night = rand(1000..20000)
     user = users.sample
 
@@ -42,7 +42,7 @@ def retrieve_planets(users)
     planet.save!
     puts 'created one planet .......'
     i += 1
-    end
+  end
   # end
   puts 'finished ....'
   # puts planet.count
