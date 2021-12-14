@@ -1,0 +1,17 @@
+<div>
+  <%= link_to 'Add a planet', new_planet_path %>
+</div>
+
+
+<div>
+  <ul>
+    <% @planets.each do |planet| %>
+      <li><%= link_to planet.name, planet_path(planet) %> -
+          <%= link_to 'Edit', edit_planet_path(planet) %> -
+          <%= link_to 'Delete', planet_path(planet),
+                              method: :delete,
+                              data: { confirm: "Are you sure?" }%>
+      </li>
+    <% end %>
+  </ul>
+</div>
