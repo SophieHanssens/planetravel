@@ -7,7 +7,16 @@
 </div>
 
 <div>
-  <h4>Your next trips</h4>
+  <h4>Your trips</h4>
+  <ul>
+    <% @bookings.each do |booking| %>
+    <% @planet = booking.planet %>
+    <li><%= @planet.name %> (<%= booking.status %>) -
+        from <%= booking.arrival_date %>
+        to <%= booking.departure_date %> -
+        <%= booking.total_price %></li>
+    <% end %>
+  </ul>
 </div>
 
 <div>
