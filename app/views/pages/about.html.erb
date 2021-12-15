@@ -1,45 +1,31 @@
-<h1>Hello <%= @user.name %></h1>
+<h1>Hello <%= current_user.name %></h1>
 
 <div>
-<p>Your full name:<%= @user.name %></p>
-<p>Your email:<%= @user.email %></p>
-<p>Your phone number:<%= @user.phone_number %></p>
-<p><%= link_to 'Edit profil', edit_user_registration_path %></p>
+  <p>Your full name:<%= @user.name %></p>
+  <p>Your email:<%= @user.email %></p>
+  <p>Your phone number:<%= @user.phone_number %></p>
+  <p><%= link_to 'Edit profil', edit_user_registration_path %></p>
 </div>
 
+
+
 <div>
-<!--   <h4>Your trips</h4>
-  <div class="container">
-    <ul>
-      <% @requested_bookings.each do |booking| %>
-        <% planet = booking.planet %>
-        <% if booking.status != 'Declined' %>
-          <li>
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title"><%= planet.name %> (<%= booking.status %>)</h5>
-                <p class="card-text">from <%= booking.arrival_date %> to <%= booking.departure_date %></p>
-                <p class="card-text"><%= booking.total_price %></p>
-              </div>
-            </div>
-          </li>
-        <% end %> -->
   <h3>Your trips</h3>
   <ul>
     <% @requested_bookings.reverse.each do |booking| %>
-        <% planet = booking.planet %>
-        <% if booking.status != 'Declined' %>
-          <li><%= link_to 'Cancel', booking_path(booking), method: :delete, data: { confirm: 'Are you sure ?'} %> |
-            <%= planet.name %> (<%= booking.status %>) -
-            from <%= booking.arrival_date %>
-            to <%= booking.departure_date %> -
-            <%= booking.total_price %>
-          </li>
-          <% @user = User.find(planet.user_id) %>
-          <p>You will live on <%= @user.name %>'s planet</p>
+      <% planet = booking.planet %>
+      <% if booking.status != 'Declined' %>
+        <li>
+          <%= link_to 'Cancel', booking_path(booking), method: :delete, data: { confirm: 'Are you sure ?'} %> |
+          <%= planet.name %> (<%= booking.status %>) -
+          from <%= booking.arrival_date %>
+          to <%= booking.departure_date %> -
+          <%= booking.total_price %>
+        </li>
+        <p>You will live on <%= planet.user.name %>'s planet</p>
       <% end %>
-    </ul>
-  </div>
+    <% end %>
+  </ul>
 </div>
 
 <div>
@@ -49,17 +35,14 @@
       <% planet = booking.planet %>
       <% if booking.status != 'Declined' %>
         <li><%= link_to 'Accept', accept_booking_path(booking), method: :patch %> |
-            <%= link_to 'Reject', reject_booking_path(booking), method: :patch %>
-            <%= planet.name %> (<%= booking.status %>) -
-            from <%= booking.arrival_date %>
-            to <%= booking.departure_date %> -
-            <%= booking.total_price %>
-          </li>
-          <% @user_request = User.find(booking.user_id) %>
-          <p>Requested by <%= @user_request.name %></p>
-        <% end %>
+          <%= link_to 'Reject', reject_booking_path(booking), method: :patch %>
+          <%= planet.name %> (<%= booking.status %>) -
+          from <%= booking.arrival_date %>
+          to <%= booking.departure_date %> -
+          <%= booking.total_price %>
+        </li>
+          <p>Requested by <%= booking.user.name %></p>
+      <% end %>
     <% end %>
   </ul>
 </div>
-
-<% console %>
