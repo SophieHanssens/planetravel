@@ -1,9 +1,33 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to "#", class: "navbar-brand" do %>
-    <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
+
+  <%= link_to "/#", class: "navbar-brand" do %>
+    <%= image_tag "https://res.cloudinary.com/dzmyhcemr/image/upload/v1639550269/Planetravel_pzry8w.png" %>
     Planetravel
   <% end %>
+<div class="cover">
 
+  <form class="flex-form">
+
+    <input type="search" placeholder="Where do you wanna go?" />
+    <label for="from">From</label>
+    <input type="date" name="from" />
+
+    <label for="to">To</label>
+    <input type="date" name="to" />
+
+    <select name="guests" id="guests">
+      <option value="1">1 guest</option>
+      <option value="2">2 guests</option>
+      <option value="3">3 guests</option>
+      <option value="4">4 guests</option>
+      <option value="5">5 guests</option>
+    </select>
+
+    <input type="submit" value="Search" />
+
+  </form>
+
+</div>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
