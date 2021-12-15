@@ -28,15 +28,26 @@ class BookingsController < ApplicationController
   end
 
   def destroy
+    @user = current_user
     @booking = Booking.find(params[:id])
+    @booking.destroy
+    redirect_to about_path
   end
 
   def accept
+    @booking = Booking.find(params[:id])
+    @booking.status = 'Accepted'
+    @booking.save!
 
+    redirect_to about_path
   end
 
   def reject
+    @booking = Booking.find(params[:id])
+    @booking.status = 'Declined'
+    @booking.save!
 
+    redirect_to about_path
   end
 
   private
