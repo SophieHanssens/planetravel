@@ -13,7 +13,8 @@
     <% @requested_bookings.each do |booking| %>
       <% planet = booking.planet %>
       <% if booking.status != 'Declined' %>
-        <li><%= planet.name %> (<%= booking.status %>) -
+        <li><%= link_to 'Cancel', booking_path(booking), method: :delete, data: { confirm: 'Are you sure ?'} %> |
+            <%= planet.name %> (<%= booking.status %>) -
             from <%= booking.arrival_date %>
             to <%= booking.departure_date %> -
             <%= booking.total_price %></li>
@@ -27,7 +28,7 @@
   <ul>
     <% @bookings_on_my_planets.each do |booking| %>
     <% planet = booking.planet %>
-        <li><%= planet.name %> (<%= booking.status %>) -
+        <li><%= link_to 'Accept', accept_booking_path(booking), method: :patch %> | <%= link_to 'Reject', reject_booking_path(booking), method: :patch %><%= planet.name %> (<%= booking.status %>) -
         from <%= booking.arrival_date %>
         to <%= booking.departure_date %> -
         <%= booking.total_price %></li>
