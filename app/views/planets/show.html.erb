@@ -1,5 +1,20 @@
 <h1>Planet <%= @planet.name %></h1>
 
 <div>
+  <H4>Infos</H4>
+  <div>
+    <% if @planet.photo.attached? %>
+      <%= cl_image_tag @planet.photo.key, height: 300, crop: :fill %>
+    <% else %>
+      <%= 'https://menaiortho.com.au/wp-content/uploads/2015/03/banner-placeholder.jpg' %></div>
+    <% end %>
+    <ul>
+      <li>Planet's owner : <%= @planet.user.name %></li>
+      <li>Planet's name : <%= @planet.name %></li>
+      <li>Planet's address : <%= @planet.address %></li>
+      <li>Available places : <%= @planet.available_places %></li>
+      <li>Price for 1 night : <%= @planet.price_per_night %></li>
+    </ul>
+<div>
   <%= link_to 'Back to list', planets_path %>
 </div>
