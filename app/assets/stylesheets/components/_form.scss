@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.cover {
+  background: #744a35;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-form {
+  display: flex;
+  border: 20px solid rgba(0,0,0,0.2);
+  border-radius: 5px;
+  // justify-content: right;
+}
+
+input[type=search] {
+  flex-basis: 500px;
+}
+
+.flex-form > * {
+  border: 0;
+  padding: 10px;
+  line-height: 50px;
+  font-size: 20px;
+  border-radius: 0;
+  outline: 0;
+  background: #fff;
+  margin-left: 1px;
+}
+
+.flex-form input[type=submit] {
+  background: #f05;
+  color: white;
+}
