@@ -10,7 +10,7 @@
 <div>
   <h4>Your trips</h4>
   <ul>
-    <% @bookings.each do |booking| %>
+    <% @requested_bookings.each do |booking| %>
       <% planet = booking.planet %>
       <% if booking.status != 'Declined' %>
         <li><%= planet.name %> (<%= booking.status %>) -
@@ -24,7 +24,15 @@
 
 <div>
   <h4>Your bookings</h4>
-
+  <ul>
+    <% @bookings_on_my_planets.each do |booking| %>
+    <% planet = booking.planet %>
+        <li><%= planet.name %> (<%= booking.status %>) -
+        from <%= booking.arrival_date %>
+        to <%= booking.departure_date %> -
+        <%= booking.total_price %></li>
+    <% end %>
+  </ul>
 </div>
 
 <% console %>

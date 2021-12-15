@@ -5,7 +5,7 @@ class PagesController < ApplicationController
 
   def about
     @user = current_user
-    @bookings = Booking.where(@user.id == :user_id)
-    # @planets = Planet.where(@user.id == :user_id)
+    @requested_bookings = Booking.where(user:current_user)
+    @bookings_on_my_planets = Booking.where(planet:current_user.planets)
   end
 end
