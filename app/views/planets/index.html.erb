@@ -2,16 +2,30 @@
   <%= link_to 'Add a planet', new_planet_path %>
 </div>
 
-
-<div>
+<div class="container">
   <ul>
     <% @planets.each do |planet| %>
-      <li><%= link_to planet.name, planet_path(planet) %> -
-          <%= link_to 'Edit', edit_planet_path(planet) %> -
-          <%= link_to 'Delete', planet_path(planet),
+      <div class="wrapper">
+  <h1>xxxxxxxx xxxxxxxx xxxxx</h1>
+  <div class="cols">
+			<div class="col" ontouchstart="this.classList.toggle('hover');">
+				<div class="block">
+					<div class="front" style="background-image: url(https://static.nationalgeographic.fr/files/styles/image_3200/public/383_planet_9_art_1_1400.jpg?w=1900&h=1132)">
+						<div class="inner">
+							<%= planet.name %> <br>
+						</div>
+					</div>
+					<div class="back">
+						<div class="inner">
+						  <%= link_to planet.name, planet_path(planet) %> <br>
+              <%= link_to 'Edit', edit_planet_path(planet) %> -
+              <%= link_to 'Delete', planet_path(planet),
                               method: :delete,
                               data: { confirm: "Are you sure?" }%>
-      </li>
+						</div>
+					</div>
+				</div>
+			</div>
     <% end %>
   </ul>
 </div>
