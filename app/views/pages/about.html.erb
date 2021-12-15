@@ -9,17 +9,24 @@
 
 <div>
   <h4>Your trips</h4>
-  <ul>
-    <% @requested_bookings.each do |booking| %>
-      <% planet = booking.planet %>
-      <% if booking.status != 'Declined' %>
-        <li><%= planet.name %> (<%= booking.status %>) -
-            from <%= booking.arrival_date %>
-            to <%= booking.departure_date %> -
-            <%= booking.total_price %></li>
+  <div class="container">
+    <ul>
+      <% @requested_bookings.each do |booking| %>
+        <% planet = booking.planet %>
+        <% if booking.status != 'Declined' %>
+          <li>
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title"><%= planet.name %> (<%= booking.status %>)</h5>
+                <p class="card-text">from <%= booking.arrival_date %> to <%= booking.departure_date %></p>
+                <p class="card-text"><%= booking.total_price %></p>
+              </div>
+            </div>
+          </li>
+        <% end %>
       <% end %>
-    <% end %>
-  </ul>
+    </ul>
+  </div>
 </div>
 
 <div>
