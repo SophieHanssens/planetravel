@@ -41,7 +41,7 @@ def retrieve_planets(users)
       puts "____creating booking____"
       Booking.create!(planet: planet,
                       user: users.reject{ |x| x == user}.sample,
-                      status: ['Accepted', 'Declined', 'pending'].sample
+                      status: ['Accepted', 'Declined', 'Pending'].sample
       )
 
     end
