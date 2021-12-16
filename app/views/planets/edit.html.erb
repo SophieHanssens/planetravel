@@ -9,3 +9,6 @@
     <%= f.button :submit %>
   <% end %>
 </div>
+<div>
+  <%= link_to 'Destroy', planet_path(@planet), method: :delete, data: {confirm: 'Are you sure?' } %>
+</div>
