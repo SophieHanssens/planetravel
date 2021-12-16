@@ -9,21 +9,20 @@
 	<div class="card-grid">
 		<article class="mini-card">
 			<header class="mini-card-header">
-				<div class="mini-card-thumbnail" style="background-image: url('https://picsum.photos/seed/picsum/400');"></div>
+				<div class="mini-card-thumbnail" style="background-image: url('https://cdn.pling.com/img/d/1/7/a/16d6867baac112659bea211f3320d022cdcc.jpg');"></div>
 				<h2 class="mini-card-title">
 					<a href="http://acf-demo.local/travel-post-1/"> <%= link_to planet.name, planet_path(planet) %></a>
 				</h2>
 			</header>
 			<div class="mini-card-body">
 				<div class="mini-card-meta">
-					<img src="https://picsum.photos/seed/picsum/80" class="avatar avatar-80 photo" width="80" height="80" />
-					<span class="article-author"><%= link_to 'Edit', edit_planet_path(planet) %>
-          <%= link_to 'Delete', planet_path(planet),
+          <p>
+            <%= link_to 'Edit', edit_planet_path(planet) %>
+            <%= link_to 'Delete', planet_path(planet),
                               method: :delete,
                               data: { confirm: "Are you sure?" }%>
-                              </span>
+          </p>
 				</div>
-				<p class="mini-card-exerpt">xxx</p>
 			</div>
 		</article>
 	</div>
