@@ -9,7 +9,7 @@
 		    <article class="mini-card">
 			    <header class="mini-card-header">
             <% if planet.photo.attached? %>
-				      <div class="mini-card-thumbnail" style='background-image: <%= cl_image_tag planet.photo.key %>;'></div>
+				      <div class="mini-card-thumbnail" style='background-image: <%= cl_photo_key planet.photo.key %>;'></div>
             <% else %>
               <div class="mini-card-thumbnail" style='background-image: url("https://i.pinimg.com/originals/21/c7/3a/21c73ae28de02eaeee9dc34a22e0aadf.jpg");'></div>
             <% end %>

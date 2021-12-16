@@ -6,22 +6,17 @@
   <% end %>
 <div class="cover">
 
-  <form class="flex-form">
+  <form class="flex-form" method="get" action="<%= planets_path %>">
 
-    <input type="search" placeholder="Where do you wanna go?" />
+    <input type="search" placeholder="Where do you want to go ?" name="search[planet]" />
     <label for="from">From</label>
-    <input type="date" name="from" />
+    <input type="date" name="search[from]" />
 
     <label for="to">To</label>
-    <input type="date" name="to" />
+    <input type="date" name="search[to]" />
 
-    <select name="guests" id="guests">
-      <option value="1">1 guest</option>
-      <option value="2">2 guests</option>
-      <option value="3">3 guests</option>
-      <option value="4">4 guests</option>
-      <option value="5">5 guests</option>
-    </select>
+    <label for="to">Nb of guests</label>
+    <input type="number" name="search[gests]" />
 
     <input type="submit" value="Search" />
 

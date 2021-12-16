@@ -2,7 +2,12 @@ class PlanetsController < ApplicationController
   before_action :set_planet, only: [:destroy, :show, :edit, :update]
 
   def index
-    @planets = Planet.all
+    if params[:search].present?
+      @planets = Planet.where('name ILIKE ?', "%#{params[:search][:planet]}%")
+
+    else
+      @planets = Planet.all
+    end
   end
 
   def new
