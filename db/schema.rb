@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_15_141957) do
+ActiveRecord::Schema.define(version: 2021_12_16_113928) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 2021_12_15_141957) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "number_of_places"
+    t.integer "number_of_days"
     t.index ["planet_id"], name: "index_bookings_on_planet_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
@@ -65,6 +66,9 @@ ActiveRecord::Schema.define(version: 2021_12_15_141957) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "climat"
+    t.string "specie"
+    t.string "activity"
     t.index ["user_id"], name: "index_planets_on_user_id"
   end
 
