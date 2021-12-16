@@ -33,7 +33,7 @@ end
 puts "Fake Users ok ! "
 
 puts "creating planets ..."
-40.times do
+20.times do
 
   name = Faker::Movies::StarWars.planet
   available_places = rand(1..20)
@@ -51,6 +51,8 @@ puts "creating planets ..."
                       specie: Faker::Movies::StarWars.specie,
                       activity: activities.sample
                       )
+  file = URI.open(['https://static.wikia.nocookie.net/frstarwars/images/c/c1/Batuu.png/revision/latest?cb=20200822103848', 'https://static.wikia.nocookie.net/frstarwars/images/a/a5/Geonosis.png/revision/latest?cb=20160402134809','https://www.10wallpaper.com/wallpaper/1920x1440/1302/Star_Wars_Planet-Universe_space_HD_Desktop_Wallpaper_1920x1440.jpg','https://i.ytimg.com/vi/Xb8Ba_eKVfY/maxresdefault.jpg','https://d2cdo4blch85n8.cloudfront.net/wp-content/uploads/2019/08/Planet-with-Three-Suns-Discovered-Featured-image.jpg', 'https://www.wallpaperflare.com/static/199/98/339/star-wars-planet-moon-battle-wallpaper.jpg', 'https://www.starwars-holonet.com/holonet/images/d/dc/11201/planete_castilon_1.jpg'].sample)
+  planet.photo.attach(io: file, filename: "#{rand(1..1000)}.jpg", content_type: 'image/jpg')
   planet.save!
   2.times do
     booking = Booking.create!(planet: planet,
