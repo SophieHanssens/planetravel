@@ -1,10 +1,12 @@
 <h2>Add your Planet</h2>
 
-<%= simple_form_for @planet do |f| %>
-  <%= f.input :name %>
-  <%= f.input :address %>
-  <%= f.input :available_places %>
-  <%= f.input :price_per_night %>
-  <%= f.input :photo, as: :file %>
-  <%= f.button :submit %>
-<% end %>
+<div class="container">
+  <%= simple_form_for @planet do |f| %>
+    <%= f.input :name %>
+    <%= f.input :address %>
+    <%= f.input :available_places %>
+    <%= f.input :price_per_night %>
+    <%= f.input :photo, as: :file %>
+    <%= f.button :submit %>
+  <% end %>
+</div>
