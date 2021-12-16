@@ -46,7 +46,7 @@ puts "creating planets ..."
                       address: address,
                       price_per_night: price_per_night,
                       available_places: available_places,
-                      user: User.find(rand(1..10)),
+                      user: User.all.sample,
                       climat: climats.sample,
                       specie: Faker::Movies::StarWars.specie,
                       activity: activities.sample
