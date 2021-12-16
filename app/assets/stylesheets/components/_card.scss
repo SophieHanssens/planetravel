@@ -11,7 +11,7 @@ body {
   background: #222;
   text-align: center;
   font-family: 'Roboto Mono';
-  padding: 1em;
+  // padding: 1em;
 }
 
 h1 {
@@ -25,7 +25,7 @@ h1 {
     >.back {
         display: block;
         transition-timing-function: cubic-bezier(.175, .885, .32, 1.275);
-        transition-duration: .8s;
+        transition-duration: .5s;
         transition-property: transform, opacity;
     }
     >.front {
@@ -183,7 +183,7 @@ border-top-right-radius: 12px;
 }
 
 .card__img--hover {
-  transition: 0.8s all ease-out;
+  transition: 0.2s all ease-out;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -311,7 +311,7 @@ main {
   transform: translateY(100%)
     translateY(-88px)
     translateZ(0);
-  transition: transform 0.8s ease-out;
+  transition: transform 0.5s ease-out;
 }
 
 .info:before {
@@ -329,7 +329,7 @@ main {
   transform: translateY(-100%)
     translateY(88px)
     translateZ(0);
-  transition: transform 0.8s ease-out;
+  transition: transform 0.5s ease-out;
 }
 
 .billet:hover .info,
@@ -448,7 +448,7 @@ a {
 		box-shadow: 0em 0em 2em -1em #000;
 		display: flex;
 		flex-direction: column;
-		transition: 0.8s;
+		transition: 0.2s;
 		margin: 0;
 		z-index: 10;
 
@@ -465,7 +465,7 @@ a {
 			z-index: 0;
 			display: flex;
 			flex-direction: column-reverse;
-			transition: 0.8s;
+			transition: 0.2s;
 
 			.mini-card-thumbnail {
 				position: absolute;
@@ -477,7 +477,7 @@ a {
 				opacity: 0.6;
 				background-size: cover;
 				background-position: 50% 50%;
-				transition: 0.8s;
+				transition: 0.2s;
 			}
 
 			h2 {
@@ -556,19 +556,3 @@ a {
         }
     }
 }
-
-
-// show planet
-.carte {
-  border: solid #2D6A4F;
-  background-color: #B7E4C7;
-  box-shadow: 20px -16px #1B4332;
-  width: 30vw;
-  margin: auto;
-}
-
-// .flexbox {
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: flex-end;
-// }
