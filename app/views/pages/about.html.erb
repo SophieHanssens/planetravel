@@ -26,14 +26,15 @@
   </ul>
 </div>
 <br>
+
 <div>
-  <h3>Your bookings</h3>
+  <h3>Your accepted bookings</h3>
   <ul>
     <% @bookings_on_my_planets.each do |booking| %>
       <% planet = booking.planet %>
-      <% if booking.status != 'Declined' %>
-        <li><%= link_to 'Accept', accept_booking_path(booking), method: :patch %> |
-          <%= link_to 'Reject', reject_booking_path(booking), method: :patch %>
+      <% if booking.status == 'Accepted'%>
+        <li>
+            <%= link_to 'Reject', reject_booking_path(booking), method: :patch %>
           <%= planet.name %> (<%= booking.status %>) -
           from <%= booking.arrival_date %>
           to <%= booking.departure_date %> -
@@ -44,4 +45,25 @@
     <% end %>
   </ul>
 </div>
+
+<div>
+  <h3>Please accept or reject those requests asap</h3>
+  <ul>
+    <% @bookings_on_my_planets.each do |booking| %>
+      <% planet = booking.planet %>
+      <% if booking.status == 'Pending' %>
+        <li>
+            <%= link_to 'Reject', reject_booking_path(booking), method: :patch %>
+            <%= link_to 'Accept', accept_booking_path(booking), method: :patch %> |
+          <%= planet.name %> (<%= booking.status %>) -
+          from <%= booking.arrival_date %>
+          to <%= booking.departure_date %> -
+          <%= booking.total_price %> RP
+        </li>
+          <p>Requested by <%= booking.user.name %></p>
+      <% end %>
+    <% end %>
+  </ul>
+</div>
+
 <br>
