@@ -260,37 +260,167 @@ border-bottom-right-radius: 12px;
 }
 
 // Activities and landscapes
-
-* {
-  box-sizing: border-box;
+main {
+  padding: 0 64px 64px;
 }
 
-/* Float four columns side by side */
-.column {
-  justify-content: center;
-  float: left;
-  width: 15%;
-  padding: 0 10px;
-  margin-bottom: 40px;
-}
-
-/* Remove extra left and right margins, due to padding in columns */
-.row {
-  justify-content: center;
-  margin: 0 -5px;}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* Responsive columns - one column layout (vertical) on small screens */
-@media screen and (max-width: 600px) {
-  .column {
-    width: 100%;
-    display: block;
-    margin-bottom: 20px;
+.billet {
+  border-radius: 16px;
+  // margin: 0 auto;
+  margin: 15px;
+  width: 500px;
+  max-width: 100%;
+  min-height: 500px;
+  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
+    0px 5px 8px 0px rgba(0, 0, 0, 0.14),
+    0px 1px 14px 0px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+  // background-image: url(https://game-guide.fr/wp-content/uploads/2011/08/nar-shaddaa-image-conceptuelle-004.jpg);
+  // background-size: cover;
+  .img1 {
+    background-image: url(https://i.pinimg.com/originals/c0/b0/73/c0b073270a0648a2e60f5642a07e5d44.jpg);
+    background-size: cover;
   }
+  .img2 {
+    background-image: url(https://cdn.wallpapersafari.com/52/25/SmKEgq.jpg);
+    background-size: cover;
+  }
+  .img3 {
+    background-image: url(https://c4.wallpaperflare.com/wallpaper/900/711/645/star-wars-at-at-walker-hoth-star-wars-wallpaper-thumb.jpg);
+    background-size: cover;
+  }
+  .img4 {
+    background-image: url(https://i.pinimg.com/originals/f8/c8/72/f8c8723beae92403582fc0b94193279b.jpg);
+    background-size: cover;
+  }
+  .img5 {
+    background-image: url(http://images.squarespace-cdn.com/content/v1/5654b0dce4b0bdb2429855bf/1584650697039-BVJP1FMURGIQ0K3S8N6J/coleman-ewok-village.v4.png);
+    background-size: cover;
+  }
+  .img6 {
+    background-image: url(https://game-guide.fr/wp-content/uploads/2011/08/nar-shaddaa-image-conceptuelle-004.jpg);
+    background-size: cover;
+  }
+}
+
+.info {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  background-color: #fff;
+  transform: translateY(100%)
+    translateY(-88px)
+    translateZ(0);
+  transition: transform 0.5s ease-out;
+}
+
+.info:before {
+  z-index: -1;
+  display: block;
+  position: absolute;
+  content: ' ';
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-image: url(https://source.unsplash.com/collection/905011/1000x1000);
+  filter: blur(10px);
+  background-size: cover;
+  opacity: 0.25;
+  transform: translateY(-100%)
+    translateY(88px)
+    translateZ(0);
+  transition: transform 0.5s ease-out;
+}
+
+.billet:hover .info,
+.billet:hover .info:before {
+  transform: translateY(0) translateZ(0);
+}
+
+.title {
+  margin: 0;
+  padding: 24px;
+  font-size: 40px;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.description {
+  margin: 0;
+  padding: 0 24px 24px;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+// /* General layout and typography stuff */
+// @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400");
+
+// * {
+//   box-sizing: border-box;
+//   position: relative;
+//   transition: all .3s ease
+// }
+
+// html {
+//   font-size: 16px
+// }
+
+// body {
+//   font-family: Open Sans, Verdana, sans-serif;
+//   color: rgba(0, 0, 0, .87);
+//   font-weight: 400;
+//   line-height: 1.45
+// }
+
+body,
+header {
+  background: #fafafa
+}
+
+header {
+  padding: 40px;
+  min-height: 200px;
+  text-align: center;
+  color: rgba(0, 0, 0, .87)
+}
+
+header > * {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto
+}
+
+header>:last-child {
+  margin-bottom: 0
+}
+
+h1 {
+  margin-bottom: 0.5em;
+  font-weight: inherit;
+  line-height: 1.2;
+  color: #1c5b72;
+  font-size: 2.618em
+}
+
+@media (min-width:800px) {
+  h1 {
+    font-size: 4.236em;
+    font-weight: 300
+  }
+}
+
+p {
+  margin-bottom: 1.3em;
+  line-height: 1.618
+}
+
+@media (min-width:800px) {
+  p {
+    font-size: 1.3em
+  }
+}
+
+a {
+  color: #e03616;
+  text-decoration: none
 }
