@@ -51,7 +51,7 @@
   <ul>
     <% @bookings_on_my_planets.each do |booking| %>
       <% planet = booking.planet %>
-      <% if booking.status != 'Pending' %>
+      <% if booking.status == 'Pending' %>
         <li>
             <%= link_to 'Reject', reject_booking_path(booking), method: :patch %>
             <%= link_to 'Accept', accept_booking_path(booking), method: :patch %> |
