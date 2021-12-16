@@ -6,6 +6,7 @@ body {
 
 h1 {
   font-family: 'Bakbak One', cursive;
+  color: #2D6A4F;
 }
 
 h2 {
@@ -13,6 +14,18 @@ h2 {
  font-family: 'Cormorant Garamond', serif;
 }
 
+h3 {
+  font-family: 'Ubuntu Mono', monospace;
+  text-decoration: underline;
+}
+
 h4 {
   font-family: 'Cormorant Garamond', serif;
 }
+
+ a {
+    color: #52B788;
+  }
+  a:hover {
+    color: #D8F3DC;
+  }

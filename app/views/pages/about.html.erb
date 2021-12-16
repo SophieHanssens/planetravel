@@ -1,9 +1,9 @@
 <h1>Hello <%= current_user.name %></h1>
 
 <div>
-  <p>Your full name:<%= @user.name %></p>
-  <p>Your email:<%= @user.email %></p>
-  <p>Your phone number:<%= @user.phone_number %></p>
+  <p><strong>Your full name</strong>: <%= @user.name %></p>
+  <p><strong>Your email</strong>: <%= @user.email %></p>
+  <p><strong>Your phone number</strong>: <%= @user.phone_number %></p>
   <p><%= link_to 'Edit profil', edit_user_registration_path %></p>
 </div>
 
@@ -25,7 +25,7 @@
     <% end %>
   </ul>
 </div>
-
+<br>
 <div>
   <h3>Your bookings</h3>
   <ul>
@@ -44,3 +44,4 @@
     <% end %>
   </ul>
 </div>
+<br>
