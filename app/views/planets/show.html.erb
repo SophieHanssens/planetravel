@@ -5,25 +5,28 @@
 <br>
 <br>
 <div class="carte">
-<h1>Planet <%= @planet.name %></h1>
+<h1><%= @planet.name %></h1>
 
   <div>
-    <h2>Infos</h2>
-    <br>
-
       <div>
         <% if @planet.photo.attached? %>
           <%= cl_image_tag @planet.photo.key, height: 300, crop: :fill %>
         <% else %>
-          <%= 'https://menaiortho.com.au/wp-content/uploads/2015/03/banner-placeholder.jpg' %></div>
+          <img src="https://i.pinimg.com/originals/21/c7/3a/21c73ae28de02eaeee9dc34a22e0aadf.jpg" alt="" height="300px">
         <% end %>
-        <br>
+        <div>
+          <p><%= link_to 'Book your trip here', new_planet_booking_path(@planet) %></p>
+        </div>
+        <h2>Planet infos</h2>
         <ul>
           <li><strong>Planet's owner</strong> : <%= @planet.user.name %></li>
           <li><strong>Planet's name</strong> : <%= @planet.name %></li>
           <li><strong>Planet's address</strong> : <%= @planet.address %></li>
           <li><strong>Available places</strong> : <%= @planet.available_places %></li>
           <li><strong>Price for 1 night</strong> : <%= @planet.price_per_night %> Republican Credits</li>
+          <li><strong>Climat</strong> : <%= @planet.climat %>s</li>
+          <li><strong>Specie living on</strong> : <%= @planet.specie %></li>
+          <li><strong>What do do here</strong> : <%= @planet.activity %></li>
         </ul>
       <div>
 </div>
