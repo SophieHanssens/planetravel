@@ -9,12 +9,12 @@ require 'uri'
 require 'json'
 require 'faker'
 
-puts 'Destroy Users'
-User.destroy_all
-puts 'Destroy Planets'
-Planet.destroy_all
 puts 'Destroy Bookings'
 Booking.destroy_all
+puts 'Destroy Planets'
+Planet.destroy_all
+puts 'Destroy Users'
+User.destroy_all
 
 puts "Creating Users..."
 User.create!(email: 'emmanuel@emmanuel.com', name: 'Emmanuel', phone_number: '890895643322', password: 'azerty')
