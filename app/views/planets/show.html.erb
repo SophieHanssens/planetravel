@@ -18,3 +18,8 @@
 <div>
   <%= link_to 'Back to list', planets_path %>
 </div>
+<div>
+  <% if policy(@planet).edit? %>
+    <%= link_to 'Edit', edit_planet_path(@planet) %>
+  <% end %>
+</div>
