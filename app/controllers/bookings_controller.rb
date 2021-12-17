@@ -4,6 +4,7 @@ class BookingsController < ApplicationController
   def new
     @planet = Planet.find(params[:planet_id])
     @booking = Booking.new
+    authorize @booking
     @user = current_user
   end
 
@@ -11,12 +12,14 @@ class BookingsController < ApplicationController
     @user = current_user
     @planet = Planet.find(params[:planet_id])
 
+
     @arrival = Date.parse(params[:booking][:arrival_date])
     @departure = Date.parse(params[:booking][:departure_date])
     @nb_days = @departure - @arrival
     @price = @nb_days * @planet.price_per_night
 
     @booking = Booking.new(booking_params)
+    authorize @booking
     @booking.total_price = @price
     @booking.status = 'Pending'
     @booking.user_id = @user.id
@@ -32,23 +35,24 @@ class BookingsController < ApplicationController
   def destroy
     @user = current_user
     @booking = Booking.find(params[:id])
+    authorize @booking
     @booking.destroy
     redirect_to about_path
   end
 
   def accept
     @booking = Booking.find(params[:id])
+    authorize @booking
     @booking.status = 'Accepted'
     @booking.save!
-    authorize @booking
     redirect_to about_path
   end
 
   def reject
     @booking = Booking.find(params[:id])
+    authorize @booking
     @booking.status = 'Declined'
     @booking.save!
-    authorize @booking
 
     redirect_to about_path
   end

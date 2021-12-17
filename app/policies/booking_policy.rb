@@ -5,11 +5,19 @@ class BookingPolicy < ApplicationPolicy
     end
   end
 
+  def create?
+    true
+  end
+
   def accept?
     record.planet.user == user
   end
 
   def reject?
     record.planet.user == user
+  end
+
+  def destroy?
+    record.user == user
   end
 end
