@@ -204,6 +204,8 @@ top: 0;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0px 13px 10px -7px rgba(0, 0, 0,0.1);
+  // border: solid #a6bba9;
+  // border-width: thin;
 }
 .card:hover {
   box-shadow: 0px 30px 18px -8px rgba(0, 0, 0,0.1);
@@ -429,130 +431,96 @@ a {
 
 // planets
 
-.featured-posts {
-	// display: flex;
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display');
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display|Source+Sans+Pro');
 
-	.card-grid {
-		// display: flex;
-		// margin: 2em auto;
-    margin: 15px;
-	}
+// body {
+//   background: #eee;
+//   padding: 40px 0px;
+// }
 
-	.mini-card {
-		width: 300px;
-		min-width: 300px;
-		height: 400px;
-		border-radius: 16px;
-		overflow: hidden;
-		background: #D8F3DC;
-		box-shadow: 0em 0em 2em -1em #000;
-		display: flex;
-		flex-direction: column;
-		transition: 0.2s;
-		margin: 0;
-		z-index: 10;
+$card-size: 400px;
+$image-size: 100%;
+$image-height: 250px;
 
-		.mini-card-header,
-		.mini-card-body {
-			position: relative;
-			padding: 1.5em;
-		}
-		.mini-card-header {
-			display: block;
-			flex: 4;
-			overflow: hidden;
-			background: #000;
-			z-index: 0;
-			display: flex;
-			flex-direction: column-reverse;
-			transition: 0.2s;
 
-			.mini-card-thumbnail {
-				position: absolute;
-				top: 0;
-				bottom: 0;
-				left: 0;
-				right: 0;
-				z-index: -1;
-				opacity: 0.6;
-				background-size: cover;
-				background-position: 50% 50%;
-				transition: 0.2s;
-			}
+.carte {
+  width: 400px;
+  margin:0px auto;
 
-			h2 {
-				color: #fff;
-				font-size: 1.2em;
-				margin: 0;
+  background-color:white;
+  box-shadow: 0px 5px 20px #555;
 
-				a {
-					color: inherit;
-					text-decoration: none;
-					&:hover {
-						color: #fff;
-            text-decoration: underline;
-					}
-				}
-			}
-		}
-		.mini-card-body {
-			flex: 2;
-			overflow: hidden;
+  margin: 15px;
+  a {
+   color: #333;
+	 text-decoration:none;
+  }
 
-			.mini-card-meta {
-				display: grid;
-				grid-template-columns: 45px 1fr;
-				grid-template-rows: 1fr 1fr;
-				font-size: 0.7em;
-				line-height: 1.2em;
-				margin-bottom: 1em;
-			}
-			.mini-card-exerpt {
-				font-size: 0.8em;
-
-				&:after {
-					content: "";
-					display: block;
-					position: absolute;
-					bottom: 0;
-					left: 0;
-					right: 0;
-					height: 100px;
-					background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);;
-				}
-			}
-		}
-
-		&:not(:first-child) {
-			margin-left: -130px;
-		}
-
-		&:is(article):hover {
-			transform: translateY( -30px );
-			~ article {
-				transform: translateX(120px);
-			}
-			.mini-card-header {
-				flex: 3;
-				.mini-card-thumbnail {
-					opacity: 0.7;
-				}
-			}
-		}
-	}
-
-	 // Header.
-	 .header-card {
-        background-image: linear-gradient(0deg, #9b2545, #cd2653);
-        color: #fff;
-        display: flex;
-        justify-content: flex-end;
-        flex-direction: column;
-        page-break-after: auto;
-        padding: 1.5em;
-        font-size: 0.8em;
-        + .mini-card {
-            margin-left: 20px;
-        }
+  &:hover {
+    .carte-image {
+      img {
+         width: $image-size+10%;
+         filter:grayscale(0);
+      }
     }
+  }
+
+}
+
+.carte-image {
+
+  height: 250px;
+
+  position:relative;
+  overflow:hidden;
+
+  img {
+    width: $image-size;
+
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    filter: grayscale(1);
+
+    transition-property: filter width;
+    transition-duration: .3s;
+  }
+
+}
+
+.carte-body {
+  text-align:center;
+  padding: 15px 20px;
+  box-sizing: border-box;
+}
+
+.carte-name {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.carte-title, .carte-exceprt {
+   font-family: 'Playfair Display', serif;
+}
+
+.carte-name, .carte-title {
+  text-align:center;
+  text-transform:uppercase;
+  font-weight: bold;
+}
+
+.carte-name, .carte-excerpt {
+  color: #777;
+}
+
+
+.showcard {
+  width: 30vw;
+  margin:0px auto;
+  // border: solid #2D6A4F;
+  border: solid #2D6A4F;
+  // box-shadow: 0px 5px 20px #555;
+  box-shadow: 60px -16px #2D6A4F;
 }
