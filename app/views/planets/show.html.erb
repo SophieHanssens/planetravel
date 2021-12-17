@@ -1,17 +1,25 @@
-<div class="showcard">
-<h1><%= @planet.name %></h1>
-
-  <div>
-      <div>
-        <% if @planet.photo.attached? %>
-          <%= cl_image_tag @planet.photo.key, height: 300, crop: :fill %>
-        <% else %>
-          <img src="https://i.pinimg.com/originals/21/c7/3a/21c73ae28de02eaeee9dc34a22e0aadf.jpg" alt="" height="300px">
-        <% end %>
-        <div>
-          <p><%= link_to 'Book your trip here', new_planet_booking_path(@planet) %></p>
-        </div>
+<div><br>
+<br>
+<br>
+<br></div>
+<div class="flex-card">
+  <div class="flex-container">
+    <figure class="image-container">
+      <% if @planet.photo.attached? %>
+        <%= cl_image_tag @planet.photo.key, height: 300, crop: :fill %>
+      <% else %>
+        <img src="https://i.pinimg.com/originals/21/c7/3a/21c73ae28de02eaeee9dc34a22e0aadf.jpg" alt="" height="300px" class="image-prop">
+      <% end %>
+    </figure>
+    <div class="image-prop" style="background-color:#fff">
+      <div class="flex-container">
+        <h1><%= @planet.name %></h1>
+      </div>
+      <div class="flex-container">
         <h2>Planet infos</h2>
+      </div>
+      <div class="info-planet">
+
         <ul>
           <li><strong>Planet's owner</strong> : <%= @planet.user.name %></li>
           <li><strong>Planet's name</strong> : <%= @planet.name %></li>
@@ -22,13 +30,7 @@
           <li><strong>Specie living on</strong> : <%= @planet.specie %></li>
           <li><strong>What do do here</strong> : <%= @planet.activity %></li>
         </ul>
-      <div>
-</div>
-  <%= link_to 'Back to list', planets_path %>
-</div>
-
-<div>
-  <% if policy(@planet).edit? %>
-    <%= link_to 'Edit', edit_planet_path(@planet) %>
-  <% end %>
+      </div>
+    </div>
+  </div>
 </div>

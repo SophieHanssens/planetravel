@@ -515,12 +515,76 @@ $image-height: 250px;
   color: #777;
 }
 
+// show planet
 
-.showcard {
-  width: 30vw;
-  margin:0px auto;
-  // border: solid #2D6A4F;
-  border: solid #2D6A4F;
-  // box-shadow: 0px 5px 20px #555;
-  box-shadow: 60px -16px #2D6A4F;
+
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700");
+
+// body {
+//   background: linear-gradient(to bottom right, #67b26f, #4ca2cd);
+//   font-family:'Open Sans';
+//   font-size: 20px;
+//   height:100vh;
+//   padding:30px;
+// }
+.image-prop {
+  width: 500px;
+  height:300px
+}
+
+.flex-container {
+  display:flex;
+  justify-content:center;
+  align-items: center;
+  border-radius:4px;
+  max-width:auto;
+  margin: 0 auto;
+  padding-top: 10px;
+  h2 {
+    font-size:95%;
+    font-weight:400;
+    // margin-left:1.05em;
+    line-height:20px;
+  }
+  h1 {
+    font-size:150%;
+    font-weight: 600;
+    margin:0 0;
+  }
+
+}
+
+figure {
+  margin:0 0 ;
+}
+
+
+// button {
+//   background-color:#3498db;
+//   color:#fff;
+//   border:none;
+//   border-radius:5px;
+//   height:20px;
+//   display:flex;
+//   align-self:center;
+//   margin-left:5px;
+// }
+
+
+
+.info-planet {
+  text-align: justify;
+  list-style-type: none;
+  padding-bottom: 45px;
+}
+
+ul {
+list-style-type: none;
+}
+
+.flex-card {
+  display:flex;
+  justify-content:center;
+  align-items: center;
+
 }
