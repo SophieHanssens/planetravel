@@ -1,33 +1,40 @@
-<div>
-  <%= link_to 'Add a planet', new_planet_path %>
-</div>
-
+<h2>Ready to travel ? <i class="fas fa-suitcase-rolling"></i></h2>
+<br>
 <div class="container">
+<div class="row justify-content-center">
   <% @planets.each do |planet| %>
-    <div class="featured-posts">
-	    <div class="card-grid">
-		    <article class="mini-card">
-			    <header class="mini-card-header">
-            <% if planet.photo.attached? %>
-				      <div class="mini-card-thumbnail" style='background-image: <%= cl_photo_key planet.photo.key %>;'></div>
-            <% else %>
-              <div class="mini-card-thumbnail" style='background-image: url("https://i.pinimg.com/originals/21/c7/3a/21c73ae28de02eaeee9dc34a22e0aadf.jpg");'></div>
-            <% end %>
-				    <h2 class="mini-card-title">
-					    <a href="http://acf-demo.local/travel-post-1/"> <%= link_to planet.name, planet_path(planet) %></a>
-				    </h2>
-			    </header>
-			    <div class="mini-card-body">
-				    <div class="mini-card-meta">
-              <p><%= link_to 'Edit', edit_planet_path(planet) %>
+      <div class="col-4">
+        <div class="carte">
+            <div class="carte-image">
+              <img src="https://img5.goodfon.com/wallpaper/nbig/3/9c/space-planet-landscape-wallpapers-1920-x-1080.jpg" alt="planet" />
+            </div>
+
+            <div class="carte-body">
+
+              <div class="carte-name">
+                <p><a href="http://acf-demo.local/travel-post-1/"> <%= link_to planet.name, planet_path(planet) %></a> <i class="fas fa-globe-asia"></i></p>
+               </div>
+
+              <div class="carte-title">
+                <h3><i class="fas fa-pencil-alt"></i> Description</h3>
+              </div>
+
+              <div class="carte-excerpt">
+                 <p><%= link_to 'Edit', edit_planet_path(planet) %>
                   <%= link_to 'Delete', planet_path(planet),
                               method: :delete,
                               data: { confirm: "Are you sure?" }%>
               </p>
-				    </div>
-			    </div>
-		    </article>
-	    </div>
-    </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+  <div class="col-1"></div>
   <% end %>
+  </div>
+</div>
+<br>
+<div>
+  <h2><%= link_to 'Add a planet', new_planet_path %></h2>
 </div>
