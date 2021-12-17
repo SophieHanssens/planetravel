@@ -27,7 +27,7 @@ puts "Creating Fake Users..."
 
     name = Faker::Movies::StarWars.character
     name_w_space = name.delete(' ')
-    user = User.create!(email: "#{name_w_space}#{rand(1..15)}@#{name_w_space}.com", name: "#{name}#{rand(1..5)}", phone_number: '12345678', password: 'azerty')
+    user = User.create!(email: "#{name_w_space}#{rand(1..1000)}@#{name_w_space}.com", name: "#{name}#{rand(1..1000)}", phone_number: '12345678', password: 'azerty')
     user.save!
 end
 puts "Fake Users ok ! "
