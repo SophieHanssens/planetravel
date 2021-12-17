@@ -49,7 +49,17 @@ puts "creating planets ..."
                       user: User.all.sample,
                       climat: climats.sample,
                       specie: Faker::Movies::StarWars.specie,
-                      activity: activities.sample
+                      activity: activities.sample,
+                      description: 'A long time ago, in a galaxy far, far away...
+                                    It is a period of civil war. Rebel
+                                    spaceships, striking from a hidden
+                                    base, have won their first victory
+                                    against the evil Galactic Empire.
+                                    During the battle, Rebel spies managed
+                                    to steal secret plans to the Empire\'s
+                                    ultimate weapon, the Death Star, an
+                                    armored space station with enough
+                                    power to destroy an entire planet...'
                       )
   file = URI.open(['https://static.wikia.nocookie.net/frstarwars/images/c/c1/Batuu.png/revision/latest?cb=20200822103848', 'https://static.wikia.nocookie.net/frstarwars/images/a/a5/Geonosis.png/revision/latest?cb=20160402134809','https://www.10wallpaper.com/wallpaper/1920x1440/1302/Star_Wars_Planet-Universe_space_HD_Desktop_Wallpaper_1920x1440.jpg','https://i.ytimg.com/vi/Xb8Ba_eKVfY/maxresdefault.jpg','https://d2cdo4blch85n8.cloudfront.net/wp-content/uploads/2019/08/Planet-with-Three-Suns-Discovered-Featured-image.jpg', 'https://www.wallpaperflare.com/static/199/98/339/star-wars-planet-moon-battle-wallpaper.jpg', 'https://www.starwars-holonet.com/holonet/images/d/dc/11201/planete_castilon_1.jpg'].sample)
   planet.photo.attach(io: file, filename: "#{rand(1..1000)}.jpg", content_type: 'image/jpg')
