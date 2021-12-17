@@ -8,11 +8,11 @@
 </div>
 
 <div>
-  <h3>Your trips</h3>
+  <h3>Your next trips</h3>
   <ul>
     <% @requested_bookings.reverse.each do |booking| %>
       <% planet = booking.planet %>
-      <% if booking.status != 'Declined' %>
+      <% if booking.status != 'Declined' && Date.today <= booking.arrival_date %>
         <li>
           <%= link_to 'Cancel', booking_path(booking), method: :delete, data: { confirm: 'Are you sure ?'} %> |
           <%= planet.name %> (<%= booking.status %>) -
@@ -29,12 +29,19 @@
 
 <div>
   <h3>Your planets</h3>
-  <br>
-  <h3>Your accepted bookings</h3>
+  <ul>
+  <% @planets.each do |planet| %>
+    <% if planet.user_id == current_user.id %>
+      <li><%= link_to planet.name, planet_path(planet) %></li>
+    <% end %>
+  <% end %>
+  </ul>
+
+  <h3>Accepted bookings on your planets</h3>
   <ul>
     <% @bookings_on_my_planets.each do |booking| %>
       <% planet = booking.planet %>
-      <% if booking.status == 'Accepted'%>
+      <% if booking.status == 'Accepted' && Date.today <= booking.arrival_date %>
         <li>
             <%= link_to 'Reject', reject_booking_path(booking), method: :patch %>
           <%= planet.name %> (<%= booking.status %>) -
