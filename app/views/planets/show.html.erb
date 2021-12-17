@@ -13,7 +13,7 @@
     </figure>
     <div class="image-prop" style="background-color:#fff">
       <div class="flex-container">
-        <h1><%= @planet.name %></h1>
+        <h1><%= @planet.name %> <img src="https://res.cloudinary.com/dzmyhcemr/image/upload/v1639750500/Jawa_zfv465.gif" alt="jawa"></h1>
       </div>
       <div class="flex-container">
         <h2>Planet infos</h2>
@@ -28,7 +28,8 @@
           <li><strong>Price for 1 night</strong> : <%= @planet.price_per_night %> Republican Credits</li>
           <li><strong>Climat</strong> : <%= @planet.climat %>s</li>
           <li><strong>Specie living on</strong> : <%= @planet.specie %></li>
-          <li><strong>What do do here</strong> : <%= @planet.activity %></li>
+          <li><strong>What to do here ?</strong> : <%= @planet.activity %></li>
+          <div class="destination"><%= link_to "Choose this destination !",  new_planet_booking_path(@planet) %></div>
         </ul>
       </div>
     </div>

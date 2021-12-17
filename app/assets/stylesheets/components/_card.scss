@@ -528,7 +528,7 @@ $image-height: 250px;
 //   padding:30px;
 // }
 .image-prop {
-  width: 500px;
+  width: 520px;
   height:300px
 }
 
@@ -576,6 +576,7 @@ figure {
   text-align: justify;
   list-style-type: none;
   padding-bottom: 45px;
+  padding-left: 15px;
 }
 
 ul {
@@ -587,4 +588,10 @@ list-style-type: none;
   justify-content:center;
   align-items: center;
 
+}
+
+.destination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
