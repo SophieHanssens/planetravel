@@ -1,0 +1,19 @@
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.container-profil {
+  display: flex;
+  justify-content: center;
+
+  div {
+    text-align: left;
+    padding-right: 100px;
+  }
+
+  p {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+}

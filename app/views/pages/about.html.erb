@@ -1,10 +1,23 @@
 <h1>Hello <%= current_user.name %></h1>
 
-<div>
-  <p><strong>Your full name</strong>: <%= @user.name %></p>
-  <p><strong>Your email</strong>: <%= @user.email %></p>
-  <p><strong>Your phone number</strong>: <%= @user.phone_number %></p>
-  <p><%= link_to 'Edit profil', edit_user_registration_path %></p>
+<div class="container-profil">
+  <div>
+    <p><strong>Your full name</strong>: <%= @user.name %></p>
+    <p><strong>Your email</strong>: <%= @user.email %></p>
+    <p><strong>Your phone number</strong>: <%= @user.phone_number %></p>
+    <p><%= link_to 'Edit profil', edit_user_registration_path %></p>
+  </div>
+
+  <div>
+    <h3>Your planets</h3>
+    <ul>
+    <% @planets.each do |planet| %>
+      <% if planet.user_id == current_user.id %>
+        <li><%= link_to planet.name, planet_path(planet) %></li>
+      <% end %>
+    <% end %>
+    </ul>
+  </div>
 </div>
 
 <div>
@@ -25,18 +38,8 @@
     <% end %>
   </ul>
 </div>
-<br>
 
 <div>
-  <h3>Your planets</h3>
-  <ul>
-  <% @planets.each do |planet| %>
-    <% if planet.user_id == current_user.id %>
-      <li><%= link_to planet.name, planet_path(planet) %></li>
-    <% end %>
-  <% end %>
-  </ul>
-
   <h3>Accepted bookings on your planets</h3>
   <ul>
     <% @bookings_on_my_planets.each do |booking| %>
