@@ -6,7 +6,11 @@
       <div class="col-4">
         <div class="carte">
             <div class="carte-image">
-              <img src="https://img5.goodfon.com/wallpaper/nbig/3/9c/space-planet-landscape-wallpapers-1920-x-1080.jpg" alt="planet" />
+              <% if planet.photo.attached? %>
+                <%= cl_image_tag planet.photo.key %>
+              <% else %>
+                <div class="mini-card-thumbnail" style='background-image: url("https://i.pinimg.com/originals/21/c7/3a/21c73ae28de02eaeee9dc34a22e0aadf.jpg");'></div>
+              <% end %>
             </div>
 
             <div class="carte-body">
@@ -16,7 +20,8 @@
                </div>
 
               <div class="carte-title">
-                <h3><i class="fas fa-pencil-alt"></i> Description</h3>
+                <p><%= truncate(planet.description, length: 250) %></p>
+
               </div>
 
               <div class="carte-excerpt">
