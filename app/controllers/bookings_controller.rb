@@ -1,4 +1,6 @@
 class BookingsController < ApplicationController
+
+
   def new
     @planet = Planet.find(params[:planet_id])
     @booking = Booking.new
@@ -38,7 +40,7 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     @booking.status = 'Accepted'
     @booking.save!
-
+    authorize @booking
     redirect_to about_path
   end
 
@@ -46,6 +48,7 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     @booking.status = 'Declined'
     @booking.save!
+    authorize @booking
 
     redirect_to about_path
   end
