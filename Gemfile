@@ -35,7 +35,6 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'faker'
 gem 'cloudinary', '~> 1.16.0'
-gem 'pundit'
 
 group :development, :test do
   gem 'pry-byebug'
